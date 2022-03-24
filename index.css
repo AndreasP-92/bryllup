@@ -1,0 +1,71 @@
+*{
+    font-family: 'Roboto Slab', serif!important;
+}
+
+.navbar{
+    background-color:#e1c9b4!important;
+    color:black!important;
+}
+.container{
+    max-width: 100%!important;
+}
+
+#banner > img{
+    width:100%;
+    min-height: 100%;
+    display:block
+}
+#bannerShadow{
+    width:100%;
+    /* height:200px; */
+    min-height:100%;
+    position:absolute;
+    top:0px;
+    background-color:rgba(24, 24, 24, 0.555);
+}
+#bannerShadow > h1{
+    font: italic 1.2em "Fira Sans", serif;
+    color:white;
+    margin-top:25%;
+    margin-left:32%;
+    font-size:55px;
+}
+#mainHeader{
+    /* height:250px; */
+    background-color:#f4e1e5;
+    text-align: center;
+}
+#mainHeader h2{
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto Slab', serif;
+    padding-top:3%;
+    padding-bottom: 3%;
+}
+article img{
+    width:100%;
+}
+.section2{
+    background-color:pink;
+}
+footer{
+    background-color:#e1c9b4!important;
+
+}
+#contact{
+    position:relative;
+    overflow:hidden;
+}
+.filter{
+    position:absolute;
+    height: 100%;
+    background-color:rgba(24, 24, 24, 0.555);
+    width:100%;
+
+}
+filter button{
+    margin-left:auto;
+    margin-right:auto;
+}
+footer p {
+    font-weight: bold;
+}
