@@ -66,6 +66,10 @@
     padding-bottom: 3%;
 }
 
+.url{
+    text-decoration: none;
+}
+
 .section01{
     padding-top:2%;
 }

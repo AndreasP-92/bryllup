@@ -46,12 +46,12 @@ export default function Home({wishes}) {
 
   console.log(wishes[0].chekced == wishes[0].limit);
 
-  for(let i = 0; i <= 9; i++) {
+  for(let i = 0; i <= 11; i++) {
     if(wishes[i].active == true){
       wishes01.push(wishes[i]);
     }
   }
-  for(let i = 9; i < wishes.length; i++) {
+  for(let i = 12; i < wishes.length; i++) {
     if(wishes[i].active == true){
       wishes02.push(wishes[i]);
     }
@@ -160,7 +160,7 @@ export default function Home({wishes}) {
                   <tbody>
                       {wishes01.map((wish, index)=>(
                         <tr key={index}>
-                          <td>{index+1}. {wish.item} </td>
+                          <td>{index+1}. <a  className={indexStyle.url} href={wish.url}>{wish.item}</a></td>
                           {wish.limit <= wish.checked ? 
                             <td><button className="btn btn-secondary">Er blevet købt</button></td>
                           :
@@ -181,9 +181,9 @@ export default function Home({wishes}) {
                   <tbody>
                       {wishes02.map((wish, index)=>(
                         <tr key={index}>
-                          <td>{index+10}. {wish.item} </td>
+                          <td>{index+10}. <a className={indexStyle.url} href={wish.url}>{wish.item}</a>  </td>
                           {wish.limit <= wish.checked ? 
-                            <td><button type="button" className="btn btn-secondary">Er blevet købt</button></td>
+                            <td><button type="button"  className="btn btn-secondary">Er blevet købt</button></td>
                           :
                             <td><button onClick={()=>addToWish(wish._id)} className="btn btn-success">Jeg har købt</button></td>
                           }
