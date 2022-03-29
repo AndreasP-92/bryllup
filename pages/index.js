@@ -97,12 +97,14 @@ export default function Home({wishes}) {
           </nav>
           <div className={`${indexStyle.banner}`}>
           <div className={`${indexStyle.banners}`}>
+            <div className={`${indexStyle.roseImage}`}>
               <Image 
                 alt=""
-                layout="fill"
+                layout="responsive"
 
                 src={rose} 
               />
+              </div>
               <div className={`${indexStyle.bannerShadow}`}>
                   <h1 className={`${indexStyle.heading01}`}>Sang og Andreas Bryllup</h1>
               </div>

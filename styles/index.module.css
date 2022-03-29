@@ -14,7 +14,7 @@
     top:0px;
 } */
 .banners{
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 .heading01{
@@ -42,10 +42,10 @@
 
 .bannerShadow{
     width:100%;
-    min-height:100%;
+    /* min-height:100%; */
     position:absolute;
     top:0px;
-    background-color:rgb(255 255 255 / 33%);
+    /* background-color:rgb(255 255 255 / 33%); */
     left:0px;
 }
 .bannerShadow > h1{
@@ -95,4 +95,22 @@
 .filter button{
     margin-left:auto;
     margin-right:auto;
+}
+.roseImage{
+    /* max-height: 100%; */
+    /* position: relative; */
+}
+
+@media (max-width: 991px){
+    .navbars{
+        display:none;
+    }
+    .roseImage{
+        /* height:250px; */
+    }
+    .heading01{
+        font-size:24px!important;
+        margin-top:20%!important;
+        margin-left:15%!important;
+    }
 }
