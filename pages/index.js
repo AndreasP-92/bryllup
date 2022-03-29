@@ -3,13 +3,13 @@ import Image from 'next/image'
 import 'bootstrap/dist/css/bootstrap.css';
 import indexStyle from '../styles/index.module.css'
 import styles from '../styles/Home.module.css'
-import img01 from '../assets/skt_Mikkels_kirke.jpg';
-import drink from '../assets/drinks3.png';
-import ring from '../assets/ring5.png';
+// import img01 from '../assets/skt_Mikkels_kirke.jpg';
+// import drink from '../assets/drinks3.png';
+// import ring from '../assets/ring5.png';
 import rose from '../assets/rose2.jpg';
-import map from '../assets/map.png';
-import os2 from '../assets/os2.jpg';
-import weddingRing from '../assets/weddingRing.jpg';
+// import map from '../assets/map.png';
+// import os2 from '../assets/os2.jpg';
+// import weddingRing from '../assets/weddingRing.jpg';
 import clientPromise from "../lib/mongodb";
 import {motion} from "framer-motion";
 // import updateWish from '../lib/table_bryllup';
@@ -72,7 +72,7 @@ export default function Home({wishes}) {
                 height={50}
                 width={70}
 
-                src={ring} 
+                src={"https://i.ibb.co/ZSxwVPG/ring5.png"} 
               />
             <a style={{width:"5%"}}href="#">
               
@@ -98,12 +98,7 @@ export default function Home({wishes}) {
           <div className={`${indexStyle.banner}`}>
           <div className={`${indexStyle.banners}`}>
             <div className={`${indexStyle.roseImage}`}>
-              <Image 
-                alt=""
-                layout="responsive"
-
-                src={rose} 
-              />
+              <img src="https://i.ibb.co/Zxmpr61/rose2.jpg"/>
               </div>
               <div className={`${indexStyle.bannerShadow}`}>
                   <h1 className={`${indexStyle.heading01}`}>Sang og Andreas Bryllup</h1>
@@ -121,9 +116,11 @@ export default function Home({wishes}) {
         <div className={`container ${indexStyle.containers}`}>
             <article className={`row text-center ${indexStyle.section01}`} id="tidsplan">
                 <div className={`col-md-6`}>
+              {/* <img src={require('./assets/os2.jpg')} /> */}
+
                   
                   <Image
-                      src={img01}
+                      src={"https://i.ibb.co/HxGZy3V/skt-Mikkels-kirke.jpg"}
                       className={indexStyle.imageBorder}
                       
                       alt="Picture of the author"
@@ -200,8 +197,9 @@ export default function Home({wishes}) {
                     <p className={indexStyle.scheduleParagraph}><span style={{fontWeight: 'bold'}}>Kirkens addresse:</span> Rosengade 4A, 4200 Slagelse</p>
                     <p className={indexStyle.scheduleParagraph}><span style={{fontWeight: 'bold'}}>Selskabslokalets addresse:</span> Landsgravvej 27a, 4200 Slagelse</p>
                     <p className={indexStyle.scheduleParagraph} >🚝 Hvis du er i <span style={{fontWeight: 'bold'}}>tog</span> til Slagelse, kan du nemt komme til <a href="https://goo.gl/maps/cu4UnaRYrPdhNSN78">kirken</a>, og ligeledes <a href="https://goo.gl/maps/63kBtwV32YH3Zo318">selskabslokalet</a>:</p>
+                    {/* <img src={require('./assets/map.png')} /> */}
                     <Image
-                      src={map}
+                      src={"https://i.ibb.co/942BxvD/map.png"}
                       alt="Picture of the author"
                       width={700}
                       height={500}
@@ -220,7 +218,7 @@ export default function Home({wishes}) {
               </div>
               <div className={`col-md-6`}>
                   <Image
-                    src={os2}
+                    src={"https://i.ibb.co/w0JRNXF/os2.jpg"}
                     alt="Picture of the author"
                     width={430}
                     height={330}
