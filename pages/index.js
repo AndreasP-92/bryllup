@@ -32,7 +32,7 @@ export default function Home({wishes}) {
             'Content-Type': 'application/json'
           }
         }
-        const updateItem = await fetch("http://localhost:3000/api/wishes",headerOptions)
+        const updateItem = await fetch("http://164.92.207.115:8080/api/wishes",headerOptions)
         console.log(await updateItem.json())
       } catch (error) {
         console.log(error)
@@ -71,7 +71,7 @@ export default function Home({wishes}) {
                 alt=""
                 height={50}
                 width={70}
-
+                priority={true}
                 src={ring} 
               />
             <a style={{width:"5%"}}href="#">
@@ -101,7 +101,7 @@ export default function Home({wishes}) {
               <Image 
                 alt=""
                 layout="responsive"
-
+                priority={true}
                 src={rose} 
               />
               </div>
@@ -125,7 +125,7 @@ export default function Home({wishes}) {
                   <Image
                       src={img01}
                       className={indexStyle.imageBorder}
-                      
+                      priority={true}
                       alt="Picture of the author"
                       width={600}
                       height={500}
@@ -205,6 +205,7 @@ export default function Home({wishes}) {
                       alt="Picture of the author"
                       width={700}
                       height={500}
+                      priority={true}
                     />
 
                 </div>
@@ -224,6 +225,7 @@ export default function Home({wishes}) {
                     alt="Picture of the author"
                     width={430}
                     height={330}
+                    priority={true}
                   />
                 </div>
             </article>
