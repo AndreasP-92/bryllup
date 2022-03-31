@@ -46,12 +46,14 @@ export default function Home({wishes}) {
 
   // console.log(wishes[0].chekced == wishes[0].limit);
 
-  for(let i = 0; i <= 11; i++) {
+  const arrayLength = 10;
+
+  for(let i = 0; i <= 10; i++) {
     if(wishes[i].active == true){
       wishes01.push(wishes[i]);
     }
   }
-  for(let i = 12; i < wishes.length; i++) {
+  for(let i = arrayLength + 1; i < wishes.length; i++) {
     if(wishes[i].active == true){
       wishes02.push(wishes[i]);
     }
@@ -115,7 +117,7 @@ export default function Home({wishes}) {
 
         <div className={`${indexStyle.mainHeader}`}>
             <h2>
-                Kom og gør vores bryllupsdag speciel! <br/> <a href="https://goo.gl/maps/63kBtwV32YH3Zo318">&ldquo;Nazar Selvskabslokaler&ldquo;</a> <br/>d. 18/5 klokken 17:00 - 02:00
+                Kom og gør vores bryllupsdag speciel! <br/> <a href="https://goo.gl/maps/63kBtwV32YH3Zo318">&ldquo;Nazar Selvskabslokaler&ldquo;</a> <br/>d. 18/6 klokken 17:00 - 02:00
             </h2>
         </div>
         <div className={`container ${indexStyle.containers}`}>
@@ -154,7 +156,7 @@ export default function Home({wishes}) {
                   <tbody>
                       {wishes01.map((wish, index)=>(
                         <tr key={index}>
-                          <td>{index+1}. <a  className={indexStyle.url} href={wish.url}>{wish.item}</a></td>
+                          <td>{index+1}<strong>. <bold></bold> <a className={indexStyle.url} href={wish.url}>{wish.item}</a></strong></td>
                           {wish.limit <= wish.checked ? 
                             <td><button className="btn btn-secondary">Er blevet købt</button></td>
                           :
@@ -175,7 +177,7 @@ export default function Home({wishes}) {
                   <tbody>
                       {wishes02.map((wish, index)=>(
                         <tr key={index}>
-                          <td>{index+10}. <a className={indexStyle.url} href={wish.url}>{wish.item}</a>  </td>
+                          <td>{index+10}<strong>. <a className={indexStyle.url} href={wish.url}>{wish.item}</a></strong></td>
                           {wish.limit <= wish.checked ? 
                             <td><button type="button"  className="btn btn-secondary">Er blevet købt</button></td>
                           :
@@ -189,14 +191,15 @@ export default function Home({wishes}) {
                 </div>
                 <div className="col-md-12">
                   <p>Penge ønskes også 💖</p>
-                  <p>Hvis du fortrækker at skrive en mail til toastmaster om køb af gave, kan det gøres på <a href="mailto:toastmaster.alphahelix.dk">toastmaster.alphahelix.dk</a></p>
+                  <p>Hvis du fortrækker at skrive en mail til toastmaster om køb af gave, kan det gøres på <a href="mailto:toastmaster@alphahelix.dk">toastmaster@alphahelix.dk</a></p>
                 </div>
             </article>
             <article className={`mt-2 row text-center`} id="ekstraInfo">
                 <div className={`col-md-12`}>
                     <h2 className={indexStyle.scheduleHeading}>Ekstra Info</h2>
-                    <p className={indexStyle.scheduleParagraph} style={{paddingTop:`3%`}}>📣 Kontakt vores <span style={{fontWeight: 'bold'}}>toastmaster</span> vedrørende planlægning af taler/sange mm. via mail: <a href="mailto:toastmaster.alphahelix.dk">toastmaster.alphahelix.dk</a> .</p>
+                    <p className={indexStyle.scheduleParagraph} style={{paddingTop:`3%`}}>📣 Kontakt vores <span style={{fontWeight: 'bold'}}>toastmaster</span> vedrørende planlægning af taler/sange mm. via mail: <a href="mailto:toastmaster@alphahelix.dk">toastmaster@alphahelix.dk</a> .</p>
                     <p className={indexStyle.scheduleParagraph}>Når du ikke at kontakte toastmasteren i tide før festen, kan det stadig nås på dagen.</p>
+                    <p className={indexStyle.scheduleParagraph} >Obs. ifølge kirken det er <span style={{fontWeight:"bold", fontStyle:"italic"}}> strengt forbudt</span> at kaste med ris ved pga. mus og rotter, <br></br> andre former eksempelvis blomster er ok ⛪.</p>
                     <p className={indexStyle.scheduleParagraph}><span style={{fontWeight: 'bold'}}>Kirkens addresse:</span> Rosengade 4A, 4200 Slagelse</p>
                     <p className={indexStyle.scheduleParagraph}><span style={{fontWeight: 'bold'}}>Selskabslokalets addresse:</span> Landsgravvej 27a, 4200 Slagelse</p>
                     <p className={indexStyle.scheduleParagraph} >🚝 Hvis du er i <span style={{fontWeight: 'bold'}}>tog</span> til Slagelse, kan du nemt komme til <a href="https://goo.gl/maps/cu4UnaRYrPdhNSN78">kirken</a>, og ligeledes <a href="https://goo.gl/maps/63kBtwV32YH3Zo318">selskabslokalet</a>:</p>
