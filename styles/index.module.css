@@ -16,6 +16,9 @@
 .banners{
     /* min-height: 100vh; */
 }
+.modalA{
+    text-decoration: none;
+}
 
 .heading01{
     text-shadow: 2px 2px 10px #000000;

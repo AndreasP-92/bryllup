@@ -9,42 +9,41 @@ import ring from '../assets/ring5.png';
 import rose from '../assets/rose2.jpg';
 import map from '../assets/map.png';
 import os2 from '../assets/os2.jpg';
-import weddingRing from '../assets/weddingRing.jpg';
 import clientPromise from "../lib/mongodb";
-import {motion} from "framer-motion";
-// import updateWish from '../lib/table_bryllup';
+import Modal from '../component/Modal'
+import React, {useState} from 'react';
 
 export default function Home({wishes}) {
-  // console.log(wishes);
+  const [showModal, setShowModal] = useState(false);
+  const [tmpId, setTmpId] = useState(0);
+
   let wishes01 = [];
   let wishes02 = [];
 
-  const addToWish = async (id)=>{
-    if(confirm("Bekræft")){
+  const addToWish = async ()=>{
       try {
         const headerOptions = {
           method: 'POST',
           body: JSON.stringify({
-            "_id" : id,
+            "_id" : tmpId,
         }),
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
           }
         }
-        const updateItem = await fetch("http://164.92.207.115:8080/api/wishes",headerOptions)
+        // const updateItem = await fetch("http://localhost:3000/api/wishes",headerOptions)
+        const updateItem = await fetch("http://164.92.207.115:80/api/wishes",headerOptions)
+        // const updateItem = await fetch("http://164.92.207.115:8080/api/wishes",headerOptions)
         console.log(await updateItem.json())
       } catch (error) {
         console.log(error)
       }
-      // alert("Hjemmesiden Opdateres")
       window.location.reload(false);
-    }
 
   }
 
 
-  // console.log(wishes[0].chekced == wishes[0].limit);
 
   const arrayLength = 10;
 
@@ -57,6 +56,12 @@ export default function Home({wishes}) {
     if(wishes[i].active == true){
       wishes02.push(wishes[i]);
     }
+  }
+
+  const modalFunction = (id)=>{
+    setShowModal(true)
+    setTmpId(id)
+    
   }
   return (
     <div className={styles.container}>
@@ -114,6 +119,21 @@ export default function Home({wishes}) {
           </div>
     </header>
     <main>
+    <div>
+        <Modal
+          onClose={() => setShowModal(false)}
+          show={showModal}
+        >
+          <div className="row">
+            <div className="col-md-6">
+              <button onClick={() => addToWish()}className="btn btn-success w-100 mt-2">Bekræft</button>
+            </div>
+            <div className="col-md-6">
+              <button className="btn btn-warning w-100 mt-2" onClick={() => setShowModal(false)}>Annuler</button>
+            </div>
+          </div>
+        </Modal>
+    </div>
 
         <div className={`${indexStyle.mainHeader}`}>
             <h2>
@@ -160,7 +180,7 @@ export default function Home({wishes}) {
                           {wish.limit <= wish.checked ? 
                             <td><button className="btn btn-secondary">Er blevet købt</button></td>
                           :
-                            <td><button onClick={()=>addToWish(wish._id)} className="btn btn-success">Jeg har købt</button></td>
+                            <td><button onClick={() => modalFunction(wish._id)} className="btn btn-success">Jeg har købt</button></td>
                           }
                         </tr>
                       ))}
@@ -181,7 +201,7 @@ export default function Home({wishes}) {
                           {wish.limit <= wish.checked ? 
                             <td><button type="button"  className="btn btn-secondary">Er blevet købt</button></td>
                           :
-                            <td><button onClick={()=>addToWish(wish._id)} className="btn btn-success">Jeg har købt</button></td>
+                            <td><button  onClick={() => modalFunction(wish._id)} className="btn btn-success">Jeg har købt</button></td>
                           }
                         </tr>
                       ))}
